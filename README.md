@@ -20,38 +20,58 @@ Below is the entry in pom.xml for this jar file.
 
 After adding above in pom.xml add the above jar in classpath and your are good to go.
 
-## Usage 
+## Installation
 
+`pip install pdf2jpg`
+
+## Usage 
+The utility can be executed in two ways
+
+### Python bindings
+
+```python
+from pdf2jpg import pdf2jpg
+inputpath = r"D:\inputdir\pdf1.pdf"
+outputpath = r"D:\outputdir"
+# To convert single page
+result = pdf2jpg.convert_pdf2jpg(inputpath, outputpath, pages="1")
+print(result)
+
+# To convert multiple pages
+result = pdf2jpg.convert_pdf2jpg(inputpath, outputpath, pages="1,0,3")
+print(result)
+
+# to convert all pages
+result = pdf2jpg.convert_pdf2jpg(inputpath, outputpath, pages="ALL")
+print(result)
+```
+
+### Directly through jar
 To use the jar just type below commands which will work
 
+```Python
 To convert single pdf page to image [Eg, below converting 3rd page]
-
-`java -jar data/pdf2jpg.jar -i path_to_pdf -o output_directory -p 2`
+$ java -jar data/pdf2jpg.jar -i path_to_pdf -o output_directory -p 2
 
 To convert Multiple pdf pages to image 
-
-`java -jar data/pdf2jpg.jar -i path_to_pdf -o output_directory -p 0,1,2,3`
+$ java -jar data/pdf2jpg.jar -i path_to_pdf -o output_directory -p 0,1,2,3
 
 To convert ALL pdf pages to image
-
-`java -jar data/pdf2jpg.jar -i path_to_pdf -o output_directory -p ALL `
-
-
-
+$ java -jar data/pdf2jpg.jar -i path_to_pdf -o output_directory -p ALL
+```
 
 **OLD Jar usage - data/pdf2jpg_noargs.jar**  [Deprecated and will be removed in later revision]
 
+```Python
 To convert single pdf page to image
-
-`java -jar data/pdf2jpg.jar path_to_pdf output_directory SINGLE 1`
+$ java -jar data/pdf2jpg.jar path_to_pdf output_directory SINGLE 1`
 
 To convert Multiple pdf pages to image
-
-`java -jar data/pdf2jpg.jar path_to_pdf output_directory MULTI 1,2,4`
+$ java -jar data/pdf2jpg.jar path_to_pdf output_directory MULTI 1,2,4`
 
 To convert ALL pdf pages to image
-
-`java -jar data/pdf2jpg.jar path_to_pdf output_directory ALL`
+$ java -jar data/pdf2jpg.jar path_to_pdf output_directory ALL
+```
 
 
 ## To do
