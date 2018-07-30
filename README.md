@@ -38,6 +38,7 @@ To convert ALL pdf pages to image
 
 
 
+
 **OLD Jar usage - data/pdf2jpg_noargs.jar**  [Deprecated and will be removed in later revision]
 
 To convert single pdf page to image
@@ -51,3 +52,8 @@ To convert Multiple pdf pages to image
 To convert ALL pdf pages to image
 
 `java -jar data/pdf2jpg.jar path_to_pdf output_directory ALL`
+
+
+## To do
+* Bulk Model implementation in java, to convert directory instead of single pdf [yet to decide if to use multithrreading or multiprocesing]
+* Python bindings
