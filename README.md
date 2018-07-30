@@ -46,7 +46,7 @@ result = pdf2jpg.convert_pdf2jpg(inputpath, outputpath, pages="ALL")
 print(result)
 ```
 
-### Directly through jar
+### Directly through jar - data/pdf2jpg.jar
 To use the jar just type below commands which will work
 
 ```Python
@@ -64,13 +64,13 @@ $ java -jar data/pdf2jpg.jar -i path_to_pdf -o output_directory -p ALL
 
 ```Python
 To convert single pdf page to image
-$ java -jar data/pdf2jpg.jar path_to_pdf output_directory SINGLE 1`
+$ java -jar data/pdf2jpg_noargs.jar path_to_pdf output_directory SINGLE 1`
 
 To convert Multiple pdf pages to image
-$ java -jar data/pdf2jpg.jar path_to_pdf output_directory MULTI 1,2,4`
+$ java -jar data/pdf2jpg_noargs.jar path_to_pdf output_directory MULTI 1,2,4`
 
 To convert ALL pdf pages to image
-$ java -jar data/pdf2jpg.jar path_to_pdf output_directory ALL
+$ java -jar data/pdf2jpg_noargs.jar path_to_pdf output_directory ALL
 ```
 
 
