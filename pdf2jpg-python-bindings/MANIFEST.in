@@ -1,0 +1,2 @@
+include README.rst
+include pdf2jpg/*.jar
