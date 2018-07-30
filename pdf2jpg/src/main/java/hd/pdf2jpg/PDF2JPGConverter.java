@@ -2,7 +2,6 @@ package hd.pdf2jpg;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 
 import org.apache.pdfbox.pdmodel.PDDocument;
@@ -62,6 +61,7 @@ public class PDF2JPGConverter {
 			System.out.print(e);					
 		}
 	}
+
 	public void convertMulti(String pdfPath, String outPath, String pageNos){
 		try {
 			PDDocument document;

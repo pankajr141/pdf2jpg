@@ -22,6 +22,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/jbig2-imageio-master/target/jbig2-imageio-3.0.0-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="D:/Users/703188429/Downloads/jbig2-imageio-3.0.0-SNAPSHOT.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

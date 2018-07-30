@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.001" errors="0" skipped="0" tests="1" name="hd.pdf2jpg.AppTest">
+<testsuite failures="0" time="0" errors="0" skipped="0" tests="1" name="hd.pdf2jpg.AppTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="D:\Program Files\Java\jdk1.7.0_79\jre\bin"/>
     <property name="java.vm.version" value="24.79-b02"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
-    <property name="maven.multiModuleProjectDirectory" value="D:\codeRelatedData\pdf2jpg"/>
+    <property name="maven.multiModuleProjectDirectory" value="D:\sourcecodes\Github\pdf2jpg\pdf2jpg"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
     <property name="path.separator" value=";"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -16,7 +16,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value="Service Pack 1"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="D:\codeRelatedData\pdf2jpg"/>
+    <property name="user.dir" value="D:\sourcecodes\Github\pdf2jpg\pdf2jpg"/>
     <property name="java.runtime.version" value="1.7.0_79-b15"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="D:\Program Files\Java\jdk1.7.0_79\jre\lib\endorsed"/>
@@ -27,9 +27,9 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 7"/>
-    <property name="classworlds.conf" value="D:\Users\703188429\workspace\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf6986052080270036589.tmp"/>
+    <property name="classworlds.conf" value="D:\Users\703188429\eclipse-workspace\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf3956522687542055463.tmp"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="D:\Program Files\Java\jdk1.7.0_79\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:/Program Files/Java/jre1.8.0_161/bin/server;C:/Program Files/Java/jre1.8.0_161/bin;C:/Program Files/Java/jre1.8.0_161/lib/amd64;C:\Program Files (x86)\ImageMagick-6.9.7-Q8;C:\Program Files\ImageMagick-6.9.7-Q8;C:\Program Files (x86)\RSA SecurID Token Common;C:\ProgramData\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\WebEx\Productivity Tools;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\Git\cmd;D:\ProgramFiles\Anaconda2;D:\ProgramFiles\Anaconda2\Scripts;D:\ProgramFiles\Anaconda2\Library\bin;C:\Python27;C:\Program Files (x86)\Tesseract-OCR;D:\ProgramFiles\Anaconda2\Scripts;D:\eclipse-jee-neon-1-win32-x86_64\eclipse;;."/>
+    <property name="java.library.path" value="D:\Program Files\Java\jdk1.7.0_79\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:/Program Files/Java/jre1.8.0_161/bin/server;C:/Program Files/Java/jre1.8.0_161/bin;C:/Program Files/Java/jre1.8.0_161/lib/amd64;C:\Program Files\Common Files\Microsoft Shared\Microsoft Online Services;C:\Program Files (x86)\Common Files\Microsoft Shared\Microsoft Online Services;C:\Program Files (x86)\ImageMagick-6.9.7-Q8;C:\Program Files\ImageMagick-6.9.7-Q8;C:\Program Files (x86)\RSA SecurID Token Common;C:\ProgramData\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\WebEx\Productivity Tools;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\Git\cmd;D:\ProgramFiles\Anaconda2;D:\ProgramFiles\Anaconda2\Scripts;D:\ProgramFiles\Anaconda2\Library\bin;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Python27;C:\Program Files (x86)\Tesseract-OCR;D:\ProgramFiles\Anaconda2\Scripts;D:\ProgramFiles\eclipse-jee-oxygen-3-win32-x86_64\eclipse;;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="51.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
@@ -40,7 +40,7 @@
     <property name="java.specification.version" value="1.7"/>
     <property name="file.encoding" value="Cp1252"/>
     <property name="user.name" value="703188429"/>
-    <property name="java.class.path" value="/D:/eclipse-jee-neon-1-win32-x86_64/eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/plexus-classworlds-2.5.2.jar"/>
+    <property name="java.class.path" value="D:\ProgramFiles\eclipse-jee-oxygen-3-win32-x86_64\eclipse\plugins\org.eclipse.m2e.maven.runtime_1.8.3.20180227-2135\jars\plexus-classworlds-2.5.2.jar"/>
     <property name="java.vm.specification.version" value="1.7"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="D:\Program Files\Java\jdk1.7.0_79\jre"/>
@@ -53,7 +53,7 @@
     <property name="java.ext.dirs" value="D:\Program Files\Java\jdk1.7.0_79\jre\lib\ext;C:\windows\Sun\Java\lib\ext"/>
     <property name="sun.boot.class.path" value="D:\Program Files\Java\jdk1.7.0_79\jre\lib\resources.jar;D:\Program Files\Java\jdk1.7.0_79\jre\lib\rt.jar;D:\Program Files\Java\jdk1.7.0_79\jre\lib\sunrsasign.jar;D:\Program Files\Java\jdk1.7.0_79\jre\lib\jsse.jar;D:\Program Files\Java\jdk1.7.0_79\jre\lib\jce.jar;D:\Program Files\Java\jdk1.7.0_79\jre\lib\charsets.jar;D:\Program Files\Java\jdk1.7.0_79\jre\lib\jfr.jar;D:\Program Files\Java\jdk1.7.0_79\jre\classes"/>
     <property name="java.vendor" value="Oracle Corporation"/>
-    <property name="maven.home" value="D:\codeRelatedData\pdf2jpg\EMBEDDED"/>
+    <property name="maven.home" value="D:\sourcecodes\Github\pdf2jpg\pdf2jpg\EMBEDDED"/>
     <property name="file.separator" value="\"/>
     <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -61,5 +61,5 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase time="0.001" classname="hd.pdf2jpg.AppTest" name="testApp"/>
+  <testcase time="0" classname="hd.pdf2jpg.AppTest" name="testApp"/>
 </testsuite>
