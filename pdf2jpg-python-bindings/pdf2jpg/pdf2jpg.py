@@ -7,13 +7,19 @@ import os
 import subprocess
 import ast
 import shutil
+import commands
+import platform
 
 def convert_pdf2jpg_single(jarPath, inputpath, outputpath, pages):
     cmd = 'java -jar %s -i "%s" -o "%s" -p %s' % (jarPath, inputpath, outputpath, pages)    
     outputpdfdir = os.path.join(outputpath, os.path.basename(inputpath))
     if os.path.exists(outputpdfdir):
         shutil.rmtree(outputpdfdir)
-    output = subprocess.check_output(cmd)
+    system = platform.system()
+    if system == "Linux":
+        output = commands.getoutput(cmd)
+    else:
+        output = subprocess.check_output(cmd)
     output = output.split("#################################")[1].strip()
     output = ast.literal_eval(output)
     outputpdfdir = output[inputpath]
