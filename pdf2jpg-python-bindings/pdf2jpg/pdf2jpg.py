@@ -7,7 +7,6 @@ import os
 import subprocess
 import ast
 import shutil
-import commands
 import platform
 
 def convert_pdf2jpg_single(jarPath, inputpath, outputpath, pages):
@@ -15,12 +14,16 @@ def convert_pdf2jpg_single(jarPath, inputpath, outputpath, pages):
     outputpdfdir = os.path.join(outputpath, os.path.basename(inputpath))
     if os.path.exists(outputpdfdir):
         shutil.rmtree(outputpdfdir)
+
     system = platform.system()
     if system == "Linux":
-        output = commands.getoutput(cmd)
+        output = subprocess.check_output(cmd.split())
     else:
         output = subprocess.check_output(cmd)
+    
+    output = output.decode()
     output = output.split("#################################")[1].strip()
+
     output = ast.literal_eval(output)
     outputpdfdir = output[inputpath]
     
@@ -49,4 +52,3 @@ if __name__ == "__main__":
     outputpath = r"D:\Working Folder\pd"
     result = convert_pdf2jpg(inputpath, outputpath, pages="1,0,3", bulk=False, jobs=2)
     print(result)
-
