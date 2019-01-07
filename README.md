@@ -29,6 +29,7 @@ The utility can be executed in two ways
 
 ### Python bindings
 
+Convertion of img into jpgfiles
 ```python
 from pdf2jpg import pdf2jpg
 inputpath = r"D:\inputdir\pdf1.pdf"
@@ -43,6 +44,17 @@ print(result)
 
 # to convert all pages
 result = pdf2jpg.convert_pdf2jpg(inputpath, outputpath, pages="ALL")
+print(result)
+```
+
+Convertion of Readable PDF into PDF of scanned images, in converted PDF user will not be able to select any text.
+```python
+from pdf2jpg import pdf2jpg
+inputpath = r"D:\inputdir\pdf1.pdf"
+outputpath = r"D:\outputdir\pdf1.pdf"
+
+# To convert pdf to imgpdf
+result = pdf2jpg.convert_pdf2imgpdf(inputpath, outputpath)
 print(result)
 ```
 
