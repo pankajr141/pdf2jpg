@@ -11,7 +11,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="pdf2jpg",
-    version="0.0.5",
+    version="0.0.6",
     author="Pankaj Rawat",
     author_email="pankajr141@gmail.com",
     description="Wrapper to convert PDF files into jpg",
@@ -22,6 +22,9 @@ setuptools.setup(
 #     data_files=[
 #         ('images', glob('pdf2jpg/*.jar')),
 #     ],
+    install_requires=[
+        'img2pdf'
+    ],
     package_data={'': ['pdf2jpg/pdf2jpg.jar']},
     include_package_data=True,
     classifiers=(
