@@ -93,15 +93,16 @@ def convert_pdf2imgpdf(inputpath, outputpath):
         with open(outputpath, "wb") as f:
             f.write(img2pdf.convert(outputjpgfiles))   
         shutil.rmtree(jpgOutputDir)
-    except Exception, err:
+    except Exception as err:
         print(err)
         return False
     return True
 
 if __name__ == "__main__":
     inputpath = r"D:\pharma\Dataset\Pharma\legal_US_4.pdf"
-    outputpath = r"D:\Working Folder\pd\fileformat.pdf"
-    #result = convert_pdf2jpg(inputpath, outputpath, pages="1,0,3")
-    #print(result)
+    outputpath = r"D:\Working Folder\pd\sdd"
+    result = convert_pdf2jpg(inputpath, outputpath, pages="1,0,3")
+    print(result)
+    outputpath = r"D:\Working Folder\pd\file1.pdf"
     result = convert_pdf2imgpdf(inputpath, outputpath)
     print(result)
