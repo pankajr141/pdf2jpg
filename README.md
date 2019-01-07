@@ -29,7 +29,7 @@ The utility can be executed in two ways
 
 ### Python bindings
 
-Convertion of img into jpgfiles
+Convertion of PDF into jpgfiles
 ```python
 from pdf2jpg import pdf2jpg
 inputpath = r"D:\inputdir\pdf1.pdf"
