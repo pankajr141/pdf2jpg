@@ -38,6 +38,12 @@ public class App
             pages.setRequired(true);
             options.addOption(pages);
 
+            
+            Option dpi = new Option("d", "dpi", true, "dpi for outputpage default 300");
+            dpi.setRequired(false);
+            options.addOption(dpi);
+            
+           
             Option threads = new Option("t", "threads", true, "Default 2 [optional BULK mode only] number of threads to use");
             threads.setRequired(false);
             options.addOption(threads);
@@ -61,8 +67,14 @@ public class App
 			String inputPath = cmd.getOptionValue("input");
             String outputPath = cmd.getOptionValue("output");
 			String pages_ = cmd.getOptionValue("pages");
-			String threads_ = cmd.getOptionValue("threads");
+			int dpi_ = 300;
 			
+			String dpi_t = cmd.getOptionValue("dpi");
+			if (dpi_t != null && !dpi_t.isEmpty()) {
+				dpi_ = Integer.parseInt(dpi_t);
+			}
+			System.out.println("DPI =>" + dpi_);
+			String threads_ = cmd.getOptionValue("threads");
 			File directory = new File(outputPath);
 		    if (! directory.exists()){
 		        directory.mkdirs();
@@ -83,11 +95,11 @@ public class App
 				
 				PDF2JPGConverter converter = new PDF2JPGConverter();
 				if (pages_.equals("ALL")){
-					converter.convertAll(inputPath, pdfOutputPath);
+					converter.convertAll(inputPath, pdfOutputPath, dpi_);
 					
 				}
 				else {
-					converter.convertMulti(inputPath, pdfOutputPath, pages_);
+					converter.convertMulti(inputPath, pdfOutputPath, dpi_, pages_);
 				}
 			}
     	}
@@ -102,10 +114,9 @@ public class App
     public static void help(){
 		System.out.println("==============================================================");
 		System.out.println("ERROR: Invalid Arguments, call the jar as below");
-		System.out.println("java -jar jarPath inputPath outDir ALL|SINGLE|MULTI [pageNo]");			
-		System.out.println("java -jar jarPath inputPath outDir ALL");			
-		System.out.println("java -jar jarPath inputPath outDir SINGLE 1");			
-		System.out.println("java -jar jarPath inputPath outDir MULTI 2,3,4");
+		System.out.println("java -jar jarPath -i path_to_pdf  -o output_directory  -p 2");			
+		System.out.println("java -jar jarPath -i path_to_pdf  -o output_directory  -p ALL");			
+		System.out.println("java -jar jarPath -i path_to_pdf  -o output_directory  -p 2,3,4");
 		System.out.println("==============================================================");    	
     }
 }

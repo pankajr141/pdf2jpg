@@ -10,16 +10,16 @@ import shutil
 import platform
 import img2pdf
 
-def __convert_pdf2jpg_single(jarPath, inputpath, outputpath, pages):
+def __convert_pdf2jpg_single(jarPath, inputpath, outputpath, dpi, pages):
     try:
-        cmd = 'java -jar %s -i "%s" -o "%s" -p %s' % (jarPath, inputpath, outputpath, pages)    
+        cmd = 'java -jar %s -i "%s" -o "%s" -d %s -p %s' % (jarPath, inputpath, outputpath, dpi, pages)    
         outputpdfdir = os.path.join(outputpath, os.path.basename(inputpath))
         if os.path.exists(outputpdfdir):
             shutil.rmtree(outputpdfdir)
     
         system = platform.system()
         if system == "Linux":
-            cmd = ["java", "-jar", jarPath, "-i", inputpath, "-o", outputpath, "-p", pages]
+            cmd = ["java", "-jar", jarPath, "-i", inputpath, "-o", outputpath, "-d", dpi, "-p", pages]
             output = subprocess.check_output(cmd)
         else:
             output = subprocess.check_output(cmd)
@@ -55,12 +55,12 @@ outputpath - outputdirectory
 pages      - Pages to be converted Eg "ALL" | "1,3,4" | "2,6"
 
 """
-def convert_pdf2jpg(inputpath, outputpath, pages="ALL"):
+def convert_pdf2jpg(inputpath, outputpath, dpi=300, pages="ALL"):
     pages = pages.split(",")
     pages = map(lambda x: x.strip(), pages)
     pages = ",".join(pages)
     jarPath = os.path.join(os.path.dirname(os.path.realpath(__file__)), r"pdf2jpg.jar")
-    return __convert_pdf2jpg_single(jarPath, inputpath, outputpath, pages=pages)
+    return __convert_pdf2jpg_single(jarPath, inputpath, outputpath, dpi=dpi, pages=pages)
 
 """
 Function convert pdf into pdf of images, in short convert a OCR PDF into not non-OCR pdf
@@ -72,13 +72,13 @@ outputpath - outputdirectory
 pages      - Pages to be converted Eg "ALL" | "1,3,4" | "2,6"
 
 """
-def convert_pdf2imgpdf(inputpath, outputpath):
+def convert_pdf2imgpdf(inputpath, outputpath, dpi):
     try:
         jpgOutputDir = "tmp_pdf2jpg"
         if os.path.exists(jpgOutputDir):
             shutil.rmtree(jpgOutputDir)
 
-        output = convert_pdf2jpg(inputpath, jpgOutputDir, pages="ALL")
+        output = convert_pdf2jpg(inputpath, jpgOutputDir, dpi, pages="ALL")
         if not output:
             print("Unable to convert PDF into images")
             return False
@@ -101,8 +101,8 @@ def convert_pdf2imgpdf(inputpath, outputpath):
 if __name__ == "__main__":
     inputpath = r"D:\pharma\Dataset\Pharma\legal_US_4.pdf"
     outputpath = r"D:\Working Folder\pd\sdd"
-    result = convert_pdf2jpg(inputpath, outputpath, pages="1,0,3")
+    result = convert_pdf2jpg(inputpath, outputpath, dpi=100, pages="1,0,3")
     print(result)
     outputpath = r"D:\Working Folder\pd\file1.pdf"
-    result = convert_pdf2imgpdf(inputpath, outputpath)
+    result = convert_pdf2imgpdf(inputpath, outputpath, dpi=100)
     print(result)

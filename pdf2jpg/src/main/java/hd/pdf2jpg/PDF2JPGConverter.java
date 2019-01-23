@@ -11,7 +11,7 @@ import org.apache.pdfbox.tools.imageio.ImageIOUtil;
 
 public class PDF2JPGConverter {
 
-	public void convertAll(String pdfPath, String outPath){
+	public void convertAll(String pdfPath, String outPath, int dpi){
 		try {
 			PDDocument document;
 			document = PDDocument.load(new File(pdfPath));
@@ -20,9 +20,9 @@ public class PDF2JPGConverter {
 			{ 
 				try {
 					String filePath = Paths.get(outPath, page + "_" + new File(pdfPath).getName() + ".jpg").toString();
-				    BufferedImage bim = pdfRenderer.renderImageWithDPI(page, 300, ImageType.RGB);
+				    BufferedImage bim = pdfRenderer.renderImageWithDPI(page, dpi, ImageType.RGB);
 				    System.out.println("Dumping page " + page + " "+ filePath);
-				    ImageIOUtil.writeImage(bim, filePath, 300);
+				    ImageIOUtil.writeImage(bim, filePath, dpi);
 				}
 				catch (Exception e) {
 					System.out.print(e);					
@@ -35,7 +35,7 @@ public class PDF2JPGConverter {
 		}
 	}
 
-	public void convertSingle(String pdfPath, String outPath, int pageNo){
+	public void convertSingle(String pdfPath, String outPath, int dpi, int pageNo){
 		try {
 			PDDocument document;
 			document = PDDocument.load(new File(pdfPath));
@@ -47,9 +47,9 @@ public class PDF2JPGConverter {
 				}
 				String filePath = Paths.get(outPath, page + "_" + new File(pdfPath).getName() + ".jpg").toString();
 				try {
-				    BufferedImage bim = pdfRenderer.renderImageWithDPI(page, 300, ImageType.RGB);
+				    BufferedImage bim = pdfRenderer.renderImageWithDPI(page, dpi, ImageType.RGB);
 				    System.out.println("Dumping page " + pageNo + " "+ filePath);
-				    ImageIOUtil.writeImage(bim, filePath, 300);
+				    ImageIOUtil.writeImage(bim, filePath, dpi);
 				}
 				catch (Exception e) {
 					System.out.print(e);					
@@ -62,7 +62,7 @@ public class PDF2JPGConverter {
 		}
 	}
 
-	public void convertMulti(String pdfPath, String outPath, String pageNos){
+	public void convertMulti(String pdfPath, String outPath, int dpi, String pageNos){
 		try {
 			PDDocument document;
 			document = PDDocument.load(new File(pdfPath));
@@ -73,9 +73,9 @@ public class PDF2JPGConverter {
 					int pageNo = Integer.parseInt(page);
 					String filePath = Paths.get(outPath, page + "_" + new File(pdfPath).getName() + ".jpg").toString();
 
-					BufferedImage bim = pdfRenderer.renderImageWithDPI(pageNo, 300, ImageType.RGB);
+					BufferedImage bim = pdfRenderer.renderImageWithDPI(pageNo, dpi, ImageType.RGB);
 				    System.out.println("Dumping page " + pageNo + " "+ filePath);
-				    ImageIOUtil.writeImage(bim, filePath, 300);
+				    ImageIOUtil.writeImage(bim, filePath, dpi);
 				}
 				catch (Exception e) {
 					System.out.print(e);					

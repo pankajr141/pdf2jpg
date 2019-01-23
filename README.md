@@ -35,15 +35,15 @@ from pdf2jpg import pdf2jpg
 inputpath = r"D:\inputdir\pdf1.pdf"
 outputpath = r"D:\outputdir"
 # To convert single page
-result = pdf2jpg.convert_pdf2jpg(inputpath, outputpath, pages="1")
+result = pdf2jpg.convert_pdf2jpg(inputpath, outputpath, dpi=300, pages="1")
 print(result)
 
 # To convert multiple pages
-result = pdf2jpg.convert_pdf2jpg(inputpath, outputpath, pages="1,0,3")
+result = pdf2jpg.convert_pdf2jpg(inputpath, outputpath, dpi=300, pages="1,0,3")
 print(result)
 
 # to convert all pages
-result = pdf2jpg.convert_pdf2jpg(inputpath, outputpath, pages="ALL")
+result = pdf2jpg.convert_pdf2jpg(inputpath, outputpath, dpi=300, pages="ALL")
 print(result)
 ```
 
@@ -54,7 +54,7 @@ inputpath = r"D:\inputdir\pdf1.pdf"
 outputpath = r"D:\outputdir\pdf1.pdf"
 
 # To convert pdf to imgpdf
-result = pdf2jpg.convert_pdf2imgpdf(inputpath, outputpath)
+result = pdf2jpg.convert_pdf2imgpdf(inputpath, outputpath, dpi=300)
 print(result)
 ```
 
@@ -63,13 +63,13 @@ To use the jar just type below commands which will work
 
 ```Python
 To convert single pdf page to image [Eg, below converting 3rd page]
-$ java -jar data/pdf2jpg.jar -i path_to_pdf -o output_directory -p 2
+$ java -jar data/pdf2jpg.jar -i path_to_pdf -o output_directory -d 300 -p 2
 
 To convert Multiple pdf pages to image 
-$ java -jar data/pdf2jpg.jar -i path_to_pdf -o output_directory -p 0,1,2,3
+$ java -jar data/pdf2jpg.jar -i path_to_pdf -o output_directory -d 300 -p 0,1,2,3
 
 To convert ALL pdf pages to image
-$ java -jar data/pdf2jpg.jar -i path_to_pdf -o output_directory -p ALL
+$ java -jar data/pdf2jpg.jar -i path_to_pdf -o output_directory -d 300 -p ALL
 ```
 
 ## To do
