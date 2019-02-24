@@ -47,6 +47,21 @@ result = pdf2jpg.convert_pdf2jpg(inputpath, outputpath, dpi=300, pages="ALL")
 print(result)
 ```
 
+output results
+```
+[{   
+    'cmd': 'java -jar D:\\pdf2jpg-bindings\\pdf2jpg\\pdf2jpg.jar -i "D:\\sourcecodes\\document.pdf" -o "D:\\Working Folder\\pd\\sdd" -d 80 -p 0,1,2,3',
+    'input_path': 'D:\\sourcecodes\\document.pdf',
+    'output_jpgfiles': [   
+			'D:\\Working Folder\\document.pdf\\0_document.pdf.jpg',
+                        'D:\\Working Folder\\document.pdf\\1_document.pdf.jpg',
+                        'D:\\Working Folder\\document.pdf\\2_document.pdf.jpg',
+                        'D:\\Working Folder\\document.pdf\\3_document.pdf.jpg'
+			],
+    'output_pdfpath': 'D:\\Working Folder\\document.pdf'
+}]
+```
+
 Convertion of Readable PDF into PDF of scanned images, in converted PDF user will not be able to select any text.
 ```python
 from pdf2jpg import pdf2jpg
