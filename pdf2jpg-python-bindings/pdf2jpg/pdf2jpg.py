@@ -56,12 +56,16 @@ pages      - Pages to be converted Eg "ALL" | "1,3,4" | "2,6"
 
 """
 def convert_pdf2jpg(inputpath, outputpath, dpi=300, pages="ALL"):
-    pages = pages.split(",")
-    pages = map(lambda x: x.strip(), pages)
-    pages = ",".join(pages)
-    jarPath = os.path.join(os.path.dirname(os.path.realpath(__file__)), r"pdf2jpg.jar")
-    return __convert_pdf2jpg_single(jarPath, inputpath, outputpath, dpi=dpi, pages=pages)
-
+    try:
+        dpi = int(dpi)
+        pages = pages.split(",")
+        pages = map(lambda x: x.strip(), pages)
+        pages = ",".join(pages)
+        jarPath = os.path.join(os.path.dirname(os.path.realpath(__file__)), r"pdf2jpg.jar")
+        return __convert_pdf2jpg_single(jarPath, inputpath, outputpath, dpi=dpi, pages=pages)
+    except Exception as err:
+        print(err)
+        return False
 """
 Function convert pdf into pdf of images, in short convert a OCR PDF into not non-OCR pdf
 Arguments:
