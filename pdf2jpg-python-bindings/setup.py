@@ -1,7 +1,7 @@
 '''
 Created on Jul 30, 2018
 
-@author: 703188429
+@author: pankajrawat
 '''
 import setuptools
 from glob import glob
@@ -11,7 +11,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="pdf2jpg",
-    version="0.0.8",
+    version="0.0.9",
     author="Pankaj Rawat",
     author_email="pankajr141@gmail.com",
     description="Wrapper to convert PDF files into jpg",

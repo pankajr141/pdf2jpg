@@ -1,7 +1,7 @@
 '''
 Created on Jul 30, 2018
 
-@author: 703188429
+@author: pankajrawat
 '''
 import os
 import subprocess
@@ -12,7 +12,7 @@ import img2pdf
 
 def __convert_pdf2jpg_single(jarPath, inputpath, outputpath, dpi, pages):
     try:
-        cmd = 'java -jar %s -i "%s" -o "%s" -d %s -p %s' % (jarPath, inputpath, outputpath, dpi, pages)    
+        cmd = 'java -jar %s -i "%s" -o "%s" -d %d -p %s' % (jarPath, inputpath, outputpath, dpi, pages)    
         outputpdfdir = os.path.join(outputpath, os.path.basename(inputpath))
         if os.path.exists(outputpdfdir):
             shutil.rmtree(outputpdfdir)
@@ -74,6 +74,7 @@ pages      - Pages to be converted Eg "ALL" | "1,3,4" | "2,6"
 """
 def convert_pdf2imgpdf(inputpath, outputpath, dpi):
     try:
+        dpi = int(dpi)
         jpgOutputDir = "tmp_pdf2jpg"
         if os.path.exists(jpgOutputDir):
             shutil.rmtree(jpgOutputDir)
@@ -99,10 +100,17 @@ def convert_pdf2imgpdf(inputpath, outputpath, dpi):
     return True
 
 if __name__ == "__main__":
-    inputpath = r"D:\pharma\Dataset\Pharma\legal_US_4.pdf"
-    outputpath = r"D:\Working Folder\pd\sdd"
-    result = convert_pdf2jpg(inputpath, outputpath, dpi=100, pages="1,0,3")
-    print(result)
-    outputpath = r"D:\Working Folder\pd\file1.pdf"
+    import pprint
+    pp = pprint.PrettyPrinter(indent=4)
+    inputpath = r"D:\sourcecodes\document.pdf"
+    outputpath = r"D:\Working Folder"
+    result = convert_pdf2jpg(inputpath, outputpath, dpi=80, pages="0,1,2,3")
+    print('==================')
+    pp.pprint(result)
+    print('==================')
+
+    outputpath = r"D:\Working Folder\file1.pdf"
     result = convert_pdf2imgpdf(inputpath, outputpath, dpi=100)
+    print('==================')
     print(result)
+    print('==================')
