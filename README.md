@@ -50,15 +50,15 @@ print(result)
 output results
 ```
 [{   
-    'cmd': 'java -jar D:\\pdf2jpg-bindings\\pdf2jpg\\pdf2jpg.jar -i "D:\\sourcecodes\\document.pdf" -o "D:\\Working Folder\\pd\\sdd" -d 80 -p 0,1,2,3',
-    'input_path': 'D:\\sourcecodes\\document.pdf',
+    'cmd': 'java -jar D:\\pdf2jpg-bindings\\pdf2jpg\\pdf2jpg.jar -i "D:\inputdir\pdf1.pdf" -o "D:\outputdir" -d 300 -p 0,1,2,3',
+    'input_path': 'D:\inputdir\pdf1.pdf',
     'output_jpgfiles': [   
-			'D:\\Working Folder\\document.pdf\\0_document.pdf.jpg',
-                        'D:\\Working Folder\\document.pdf\\1_document.pdf.jpg',
-                        'D:\\Working Folder\\document.pdf\\2_document.pdf.jpg',
-                        'D:\\Working Folder\\document.pdf\\3_document.pdf.jpg'
+			'D:\outputdir\\pdf1.pdf\\0_pdf1.pdf.jpg',
+                        'D:\outputdir\\pdf1.pdf\\1_pdf1.pdf.jpg',
+                        'D:\outputdir\\pdf1.pdf\\2_pdf1.pdf.jpg',
+                        'D:\outputdir\\pdf1.pdf\\3_pdf1.pdf.jpg'
 			],
-    'output_pdfpath': 'D:\\Working Folder\\document.pdf'
+    'output_pdfpath': 'D:\outputdir\\pdf1.pdf'
 }]
 ```
 
