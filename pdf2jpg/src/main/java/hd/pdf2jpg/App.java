@@ -84,7 +84,7 @@ public class App
 				System.out.println("BULK Mode using Java native implementation | Under implementation");
 			}
 			else {
-				String pdfOutputPath = Paths.get(outputPath, new File(inputPath).getName()).toString();
+				String pdfOutputPath = Paths.get(outputPath, new File(inputPath).getName() + "_dir").toString();
 				System.out.println(pdfOutputPath);
 				jsonString.put(inputPath, pdfOutputPath);
 				directory = new File(pdfOutputPath);
