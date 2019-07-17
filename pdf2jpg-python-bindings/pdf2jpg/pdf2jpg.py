@@ -12,14 +12,14 @@ import img2pdf
 
 def __convert_pdf2jpg_single(jarPath, inputpath, outputpath, dpi, pages):
     try:
-        cmd = 'java -jar %s -i "%s" -o "%s" -d %s -p %s' % (jarPath, inputpath, outputpath, str(dpi), pages)    
-        outputpdfdir = os.path.join(outputpath, os.path.basename(inputpath) + "_dir")
+        cmd = 'java -jar %s -i "%s" -o "%s" -d %d -p %s' % (jarPath, inputpath, outputpath, dpi, pages)    
+        outputpdfdir = os.path.join(outputpath, os.path.basename(inputpath))
         if os.path.exists(outputpdfdir):
             shutil.rmtree(outputpdfdir)
     
         system = platform.system()
         if system == "Linux":
-            cmd = ["java", "-jar", jarPath, "-i", inputpath, "-o", outputpath, "-d", str(dpi), "-p", pages]
+            cmd = ["java", "-jar", jarPath, "-i", inputpath, "-o", outputpath, "-d", dpi, "-p", pages]
             output = subprocess.check_output(cmd)
         else:
             output = subprocess.check_output(cmd)
@@ -96,9 +96,8 @@ def convert_pdf2imgpdf(inputpath, outputpath, dpi):
             os.makedirs(outputdir)
 
         with open(outputpath, "wb") as f:
-            f.write(img2pdf.convert(outputjpgfiles))
-        if os.path.exists(jpgOutputDir): 
-            shutil.rmtree(jpgOutputDir)
+            f.write(img2pdf.convert(outputjpgfiles))   
+        shutil.rmtree(jpgOutputDir)
     except Exception as err:
         print(err)
         return False
@@ -108,7 +107,7 @@ if __name__ == "__main__":
     import pprint
     pp = pprint.PrettyPrinter(indent=4)
     inputpath = r"D:\sourcecodes\document.pdf"
-    outputpath = r"D:\sourcecodes"
+    outputpath = r"D:\Working Folder"
     result = convert_pdf2jpg(inputpath, outputpath, dpi=80, pages="0,1,2,3")
     print('==================')
     pp.pprint(result)
