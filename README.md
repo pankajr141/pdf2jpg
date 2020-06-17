@@ -22,7 +22,11 @@ After adding above in pom.xml add the above jar in classpath and your are good t
 
 ## Installation
 
-`pip install pdf2jpg`
+we only support python3
+
+`pip3 install pdf2jpg`
+
+also make sure that you have java installed in system, just check if entering java in terminal is working and not throwing error
 
 ## Usage 
 The utility can be executed in two ways
