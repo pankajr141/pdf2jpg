@@ -28,6 +28,8 @@ we only support python3
 
 also make sure that you have java installed in system, just check if entering java in terminal is working and not throwing error
 
+https://www.youtube.com/watch?v=SL3WiUpvZ5c  The video contains demo of installation and usage
+
 ## Usage 
 The utility can be executed in two ways
 
