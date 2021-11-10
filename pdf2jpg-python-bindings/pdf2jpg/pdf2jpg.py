@@ -12,27 +12,27 @@ import img2pdf
 
 def __convert_pdf2jpg_single(jarPath, inputpath, outputpath, dpi, pages):
     try:
-        cmd = 'java -jar %s -i "%s" -o "%s" -d %s -p %s' % (jarPath, inputpath, outputpath, str(dpi), pages)    
+        cmd = 'java -jar "{}" -i "{}" -o "{}" -d {} -p {}'.format(jarPath, inputpath, outputpath, str(dpi), pages)
         outputpdfdir = os.path.join(outputpath, os.path.basename(inputpath) + "_dir")
         if os.path.exists(outputpdfdir):
             shutil.rmtree(outputpdfdir)
-    
+
         system = platform.system()
         if system == "Linux":
-            cmd = ["java", "-jar", jarPath, "-i", inputpath, "-o", outputpath, "-d", str(dpi), "-p", pages]
+            cmd = ["java", "-jar", '{}'.format(jarPath), "-i", '{}'.format(inputpath), "-o", '{}'.format(outputpath), "-d", str(dpi), "-p", pages]
             output = subprocess.check_output(cmd)
         else:
             output = subprocess.check_output(cmd)
-        
+
         output = output.decode()
         output = output.split("#################################")[1].strip()
-    
+
         output = ast.literal_eval(output)
         outputpdfdir = output[inputpath]
-        
+
         outputFiles = map(lambda x: os.path.join(outputpdfdir, x), os.listdir(outputpdfdir))
-        outputFiles = sorted(outputFiles, key=lambda x: os.path.basename(x).split("_")  [0])   
-        
+        outputFiles = sorted(outputFiles, key=lambda x: os.path.basename(x).split("_")  [0])
+
         result = {
             'cmd': cmd,
             'input_path': inputpath,
@@ -43,9 +43,9 @@ def __convert_pdf2jpg_single(jarPath, inputpath, outputpath, dpi, pages):
         print(err)
         return False
     return [result]
- 
+
 """
-Function convert pdf into jpg files 
+Function convert pdf into jpg files
 
 Arguments:
 ==========
@@ -87,17 +87,17 @@ def convert_pdf2imgpdf(inputpath, outputpath, dpi):
         if not output:
             print("Unable to convert PDF into images")
             return False
-        
+
         outputjpgfiles = output[0]['output_jpgfiles']
         print(outputjpgfiles)
-        
+
         outputdir = os.path.dirname(outputpath)
         if not os.path.exists(outputdir):
             os.makedirs(outputdir)
 
         with open(outputpath, "wb") as f:
             f.write(img2pdf.convert(outputjpgfiles))
-        if os.path.exists(jpgOutputDir): 
+        if os.path.exists(jpgOutputDir):
             shutil.rmtree(jpgOutputDir)
     except Exception as err:
         print(err)
@@ -107,14 +107,14 @@ def convert_pdf2imgpdf(inputpath, outputpath, dpi):
 if __name__ == "__main__":
     import pprint
     pp = pprint.PrettyPrinter(indent=4)
-    inputpath = r"D:\sourcecodes\document.pdf"
-    outputpath = r"D:\sourcecodes"
+    inputpath = r"/home/pankajrawat/Downloads/folder 1 and 2/document with spaces.pdf"
+    outputpath = r"/tmp/outputdir 1"
     result = convert_pdf2jpg(inputpath, outputpath, dpi=80, pages="0,1,2,3")
     print('==================')
     pp.pprint(result)
     print('==================')
 
-    outputpath = r"D:\Working Folder\file1.pdf"
+    outputpath = r"/tmp/outputdir 2/document.pdf"
     result = convert_pdf2imgpdf(inputpath, outputpath, dpi=100)
     print('==================')
     print(result)

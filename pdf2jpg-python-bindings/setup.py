@@ -11,7 +11,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="pdf2jpg",
-    version="1.0",
+    version="1.1",
     author="Pankaj Rawat",
     author_email="pankajr141@gmail.com",
     description="Wrapper to convert PDF files into jpg",
