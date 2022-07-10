@@ -28,7 +28,8 @@ we only support python3
 
 also make sure that you have java installed in system, just check if entering java in terminal is working and not throwing error
 
-https://www.youtube.com/watch?v=SL3WiUpvZ5c  The video contains demo of installation and usage
+The video contains demo of installation and usage
+[![Demo Video](https://github.com/pankajr141/collection/raw/main/others/pdf2jpg_embed1.png)](https://www.youtube.com/watch?v=SL3WiUpvZ5c&list=UUplf_LWNn0a9ubnKCZ-95YQ&index=12)
 
 ## Usage 
 The utility can be executed in two ways
